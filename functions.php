@@ -51,7 +51,7 @@ function axis_setup() {
 		array(
 			'menu-1' => esc_html__( 'Primary', 'axis' ),
 		)
-	);
+	); 
 
 	/*
 		* Switch default core markup for search form, comment form, and comments
@@ -101,6 +101,8 @@ function axis_setup() {
 	);
 }
 add_action( 'after_setup_theme', 'axis_setup' );
+
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

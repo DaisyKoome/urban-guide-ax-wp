@@ -63,11 +63,27 @@
         <div class="wrapper" class="clearfloat">
             <div class="top-bar">
                 <div class="col left">
-                    <a href="index.html" class="logo"> <img src="images/Axis-logo.png" width="186" height="77" alt="Axis-logo"> </a>
+                <a href="index.html" class="logo"> 
+                    <?php
+                    if(function_exists('the_custom_logo')){
+                        the_custom_logo();
+                    }
+                    ?>
+                </a>
                 </div>
                 <div class="col right">
                     <div class="menu-icon"><span class="icon-main-menu"></span></div>
-                    <div class="main-menu">
+                                           
+<!--                             wp_nav_menu( 
+                                array (
+                                    'menu' => 'primary',
+                                    'container' => '',
+                                    'theme_location' => 'primary',
+                                    'items_wrap' => '<ul id="main_nav" class="main-menu">3$s</ul>'
+                                )
+                             ) -->
+                        
+
                         <ul id="main_nav">
                             <li class="current active">
                                 <a href="#">About</a>
@@ -84,12 +100,15 @@
                             <li>
                                 <a href="about-us.html">Jobs</a>
                             </li>
+                            <button class="btn btn-secondary btn-join">
+                            <span>Join us</span>
+                            </button>
                         </ul>
+                    
+
                     </div>
-                    <button class="btn btn-secondary btn-join">
-                        <span>Join us</span>
-                    </button>
                 </div>
             </div>
         </div>
     </header>
+ </section>
