@@ -23,37 +23,73 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'axis' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$axis_description = get_bloginfo( 'description', 'display' );
-			if ( $axis_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $axis_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'axis' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+<!-- main_wrapper -->
+<div id="main_wrapper" class="clearfloat">
+    <!-- mobile_nav_wrapper -->
+    <div id="mobile_nav_wrapper">
+        <div class="mobile-nav-content">
+            <div class="header">
+                <a href="#" class="menu-close">&times;</a>
+                <a href="#" class="logo">
+                    <img src="images/Axis-logo.png" alt="logo">
+                </a>
+            </div>
+            <ul class="mobile-nav">
+                <li>
+                    <a href="#" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Features</a>
+                </li>
+                <li>
+                    <a href="#">Help Centre</a>
+                </li>
+                <li>
+                    <a href="#">Pricing</a>
+                </li>
+                <li>
+                    <a href="#">Contact us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- mobile_nav_wrapper end -->
+<!-- header -->
+<section class="bg">
+    <header class="scrollingg">
+        <div class="wrapper" class="clearfloat">
+            <div class="top-bar">
+                <div class="col left">
+                    <a href="index.html" class="logo"> <img src="images/Axis-logo.png" width="186" height="77" alt="Axis-logo"> </a>
+                </div>
+                <div class="col right">
+                    <div class="menu-icon"><span class="icon-main-menu"></span></div>
+                    <div class="main-menu">
+                        <ul id="main_nav">
+                            <li class="current active">
+                                <a href="#">About</a>
+                            </li>
+                            <li >
+                                <a href="#">Features</a>
+                            </li>
+                            <li >
+                                <a href="#">Help Centre</a>
+                            </li>
+                            <li >
+                                <a href="#">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="about-us.html">Jobs</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-secondary btn-join">
+                        <span>Join us</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>

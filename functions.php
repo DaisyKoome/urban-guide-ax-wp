@@ -140,6 +140,11 @@ add_action( 'widgets_init', 'axis_widgets_init' );
 function axis_scripts() {
 	wp_enqueue_style( 'axis-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'axis-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'axis-plugins', get_template_directory_uri() . '/css/plugin.css');
+
+	wp_enqueue_script( 'axis-jquery', get_template_directory_uri() . '/js/jquery-3.4.1.min.js', array(), _S_VERSION, true, true );
+	wp_enqueue_script( 'axis-jquery', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true, true );
+	wp_enqueue_script( 'axis-jquery', get_template_directory_uri() . '/js/plugins.js', array(), _S_VERSION, true, true );
 
 	wp_enqueue_script( 'axis-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
